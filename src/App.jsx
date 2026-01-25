@@ -9,6 +9,38 @@ export default function App() {
     isSubmitted: false,
   });
 
+  const [educationInfo, setEduInfo] = useState({
+    schoolName: "",
+    titleOfStudy: "",
+    dateOfStudy: "",
+    isSubmitted: false,
+  });
+
+  const handleEducationalInfoSubmit = (e) => {
+    e.preventDefault();
+    setEduInfo((prev) => {
+      const newObj = { ...prev };
+      newObj.isSubmitted = true;
+      return newObj;
+    });
+  };
+
+  const handleEducationalInfoEdit = () => {
+    setEduInfo((prev) => {
+      const newObj = { ...prev };
+      newObj.isSubmitted = false;
+      return newObj;
+    });
+  };
+
+  const handleEducationalInfoChange = (name, value) => {
+    setEduInfo((prev) => {
+      const newObj = { ...prev };
+      newObj[name] = value;
+      return newObj;
+    });
+  };
+
   const handleGeneralInfoSubmit = (e) => {
     e.preventDefault();
     setInfo((prev) => {
@@ -41,6 +73,10 @@ export default function App() {
         handleGeneralInfoSubmit={handleGeneralInfoSubmit}
         handleGeneralInfoEdit={handleGeneralInfoEdit}
         handleGeneralInfoChange={handleGeneralInfoChange}
+        educationInfo={educationInfo}
+        handleEducationalInfoSubmit={handleEducationalInfoSubmit}
+        handleEducationalInfoEdit={handleEducationalInfoEdit}
+        handleEducationalInfoChange={handleEducationalInfoChange}
       ></LeftSection>
     </>
   );

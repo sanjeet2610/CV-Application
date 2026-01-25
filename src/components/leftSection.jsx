@@ -1,5 +1,5 @@
 import GeneralInfo from "./generalInfo";
-
+import Education from "./education";
 export default function LeftSection(props) {
   return (
     <>
@@ -9,6 +9,12 @@ export default function LeftSection(props) {
         handleGeneralInfoEdit={props.handleGeneralInfoEdit}
         handleGeneralInfoChange={props.handleGeneralInfoChange}
       ></GeneralInfo>
+      <Education
+        educationInfo={props.educationInfo}
+        handleEducationalInfoChange={props.handleEducationalInfoChange}
+        handleEducationalInfoSubmit={props.handleEducationalInfoSubmit}
+        handleEducationalInfoEdit={props.handleEducationalInfoEdit}
+      ></Education>
     </>
   );
 }

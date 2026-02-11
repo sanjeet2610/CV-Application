@@ -1,5 +1,6 @@
 import { useState } from "react";
 import LeftSection from "./components/leftSection";
+import RightSection from "./components/rightSection";
 
 export default function App() {
   const [generalInfo, setInfo] = useState({
@@ -15,6 +16,40 @@ export default function App() {
     dateOfStudy: "",
     isSubmitted: false,
   });
+
+  const [experienceInfo, setExp] = useState({
+    companyName: "",
+    positionTitle: "",
+    responsibilities: "",
+    startDate: "",
+    endDate: "",
+    isSubmitted: false,
+  });
+
+  const handleExperienceInfoSubmit = (e) => {
+    e.preventDefault();
+    setExp((prev) => {
+      const newObj = { ...prev };
+      newObj.isSubmitted = true;
+      return newObj;
+    });
+  };
+
+  const handleExperienceInfoEdit = () => {
+    setExp((prev) => {
+      const newObj = { ...prev };
+      newObj.isSubmitted = false;
+      return newObj;
+    });
+  };
+
+  const handleExperienceInfoChange = (name, value) => {
+    setExp((prev) => {
+      const newObj = { ...prev };
+      newObj[name] = value;
+      return newObj;
+    });
+  };
 
   const handleEducationalInfoSubmit = (e) => {
     e.preventDefault();
@@ -77,7 +112,16 @@ export default function App() {
         handleEducationalInfoSubmit={handleEducationalInfoSubmit}
         handleEducationalInfoEdit={handleEducationalInfoEdit}
         handleEducationalInfoChange={handleEducationalInfoChange}
+        experienceInfo={experienceInfo}
+        handleExperienceInfoChange={handleExperienceInfoChange}
+        handleExperienceInfoEdit={handleExperienceInfoEdit}
+        handleExperienceInfoSubmit={handleExperienceInfoSubmit}
       ></LeftSection>
+      <RightSection
+        generalInfo={generalInfo}
+        educationInfo={educationInfo}
+        experienceInfo={experienceInfo}
+      ></RightSection>
     </>
   );
 }

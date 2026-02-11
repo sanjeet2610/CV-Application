@@ -21,6 +21,7 @@ export default function GeneralInfo({
         <form onSubmit={handleGeneralInfoSubmit}>
           <label htmlFor="name">Name :</label>
           <input
+            required
             name="name"
             type="text"
             id="name"
@@ -31,6 +32,7 @@ export default function GeneralInfo({
           />
           <label htmlFor="email">Email :</label>
           <input
+            required
             name="email"
             type="email"
             id="email"
@@ -41,6 +43,7 @@ export default function GeneralInfo({
           ></input>
           <label htmlFor="phone">Phone :</label>
           <input
+            required
             name="phone"
             type="number"
             id="phone"

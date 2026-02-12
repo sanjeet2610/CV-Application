@@ -6,18 +6,27 @@ export default function GeneralInfo({
 }) {
   if (generalInfo.isSubmitted) {
     return (
-      <>
-        <h1>DisplayMode</h1>
-        <p>Name :{generalInfo.name}</p>
-        <p>Email :{generalInfo.email}</p>
-        <p>Phone No:{generalInfo.phone}</p>
+      <div className="general-display">
+        <h2>General-info form submitted ...</h2>
+        <p>
+          <strong>Name :</strong>
+          {generalInfo.name}
+        </p>
+        <p>
+          <strong>Email :</strong>
+          {generalInfo.email}
+        </p>
+        <p>
+          <strong>Phone No:</strong>
+          {generalInfo.phone}
+        </p>
         <button onClick={handleGeneralInfoEdit}>Edit</button>
-      </>
+      </div>
     );
   } else {
     return (
-      <>
-        <h1>Form Mode</h1>
+      <div>
+        <h2>Fill General-info form</h2>
         <form onSubmit={handleGeneralInfoSubmit}>
           <label htmlFor="name">Name :</label>
           <input
@@ -54,7 +63,7 @@ export default function GeneralInfo({
           />
           <button type="submit">Submit</button>
         </form>
-      </>
+      </div>
     );
   }
 }

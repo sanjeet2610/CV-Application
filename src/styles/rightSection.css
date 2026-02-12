@@ -1,0 +1,63 @@
+.right-section {
+  display: flex;
+  flex-direction: column;
+  width: 55vw;
+  padding: 1rem;
+  padding-left: 2rem;
+  border-left: 2px solid black;
+}
+
+.right-section h1 {
+  text-align: center;
+}
+
+.right-general {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid black;
+}
+
+.mail-phone {
+  display: flex;
+  gap: 2rem;
+}
+
+.right-general h2 {
+  padding: 0;
+  margin: 0;
+}
+
+.right-edu {
+  border-bottom: 2px solid black;
+}
+
+.right-section .extra-info {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-section .extra-info button {
+  height: 50%;
+  margin-right: 1rem;
+}
+
+@media print {
+  body {
+    background: white;
+  }
+
+  .left-section {
+    display: none;
+  }
+
+  .right-section {
+    width: 100%;
+    box-shadow: none;
+    border: none;
+  }
+
+  .extra-info {
+    display: none !important;
+  }
+}

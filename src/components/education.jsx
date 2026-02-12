@@ -6,18 +6,27 @@ export default function Education({
 }) {
   if (educationInfo.isSubmitted) {
     return (
-      <>
-        <h1>Display Mode</h1>
-        <p>School Name :{educationInfo.schoolName}</p>
-        <p>Title Of Study :{educationInfo.titleOfStudy}</p>
-        <p>Date Of Study :{educationInfo.dateOfStudy}</p>
+      <div>
+        <h2>Education-info submitted ...</h2>
+        <p>
+          <strong>School Name :</strong>
+          {educationInfo.schoolName}
+        </p>
+        <p>
+          <strong>Title Of Study :</strong>
+          {educationInfo.titleOfStudy}
+        </p>
+        <p>
+          <strong>Date Of Study :</strong>
+          {educationInfo.dateOfStudy}
+        </p>
         <button onClick={handleEducationalInfoEdit}>Edit</button>
-      </>
+      </div>
     );
   } else {
     return (
-      <>
-        <h1>Form Mode</h1>
+      <div>
+        <h2>Fill education-info form</h2>
         <form onSubmit={handleEducationalInfoSubmit}>
           <label htmlFor="schoolName">School Name :</label>
           <input
@@ -51,7 +60,7 @@ export default function Education({
           />
           <button type="submit">Submit</button>
         </form>
-      </>
+      </div>
     );
   }
 }

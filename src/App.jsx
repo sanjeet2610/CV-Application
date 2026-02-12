@@ -1,6 +1,7 @@
 import { useState } from "react";
 import LeftSection from "./components/leftSection";
 import RightSection from "./components/rightSection";
+import "./styles/app.css";
 
 export default function App() {
   const [generalInfo, setInfo] = useState({
@@ -102,7 +103,7 @@ export default function App() {
   };
 
   return (
-    <>
+    <div className="app">
       <LeftSection
         generalInfo={generalInfo}
         handleGeneralInfoSubmit={handleGeneralInfoSubmit}
@@ -122,6 +123,6 @@ export default function App() {
         educationInfo={educationInfo}
         experienceInfo={experienceInfo}
       ></RightSection>
-    </>
+    </div>
   );
 }

@@ -1,10 +1,11 @@
 import GeneralInfo from "./generalInfo";
 import Education from "./education";
 import Experience from "./experience";
+import "../styles/leftSection.css";
 export default function LeftSection(props) {
-  console.log(props)
+  console.log(props);
   return (
-    <>
+    <div className="left-section">
       <GeneralInfo
         generalInfo={props.generalInfo}
         handleGeneralInfoSubmit={props.handleGeneralInfoSubmit}
@@ -18,11 +19,11 @@ export default function LeftSection(props) {
         handleEducationalInfoEdit={props.handleEducationalInfoEdit}
       ></Education>
       <Experience
-        experienceInfo = {props.experienceInfo}
-        handleExperienceInfoChange = {props.handleExperienceInfoChange}
-        handleExperienceInfoEdit = {props.handleExperienceInfoEdit}
-        handleExperienceInfoSubmit = {props.handleExperienceInfoSubmit}
+        experienceInfo={props.experienceInfo}
+        handleExperienceInfoChange={props.handleExperienceInfoChange}
+        handleExperienceInfoEdit={props.handleExperienceInfoEdit}
+        handleExperienceInfoSubmit={props.handleExperienceInfoSubmit}
       ></Experience>
-    </>
+    </div>
   );
 }

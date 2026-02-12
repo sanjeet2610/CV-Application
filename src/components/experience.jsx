@@ -6,20 +6,35 @@ export default function Experience({
 }) {
   if (experienceInfo.isSubmitted) {
     return (
-      <>
-        <h1>Display Mode</h1>
-        <p>Company Name : {experienceInfo.companyName}</p>
-        <p>Position :{experienceInfo.positionTitle}</p>
-        <p>Responsibilities :{experienceInfo.responsibilities}</p>
-        <p>Start Date :{experienceInfo.startDate}</p>
-        <p>End Date :{experienceInfo.endDate}</p>
+      <div>
+        <h2>Experience form submitted ...</h2>
+        <p>
+          <strong>Company Name : </strong>
+          {experienceInfo.companyName}
+        </p>
+        <p>
+          <strong>Position :</strong>
+          {experienceInfo.positionTitle}
+        </p>
+        <p>
+          <strong>Responsibilities :</strong>
+          {experienceInfo.responsibilities}
+        </p>
+        <p>
+          <strong>Start Date :</strong>
+          {experienceInfo.startDate}
+        </p>
+        <p>
+          <strong>End Date :</strong>
+          {experienceInfo.endDate}
+        </p>
         <button onClick={handleExperienceInfoEdit}>Edit</button>
-      </>
+      </div>
     );
   } else {
     return (
-      <>
-        <h1>Form Mode</h1>
+      <div>
+        <h2>Fill experience details</h2>
         <form onSubmit={handleExperienceInfoSubmit}>
           <label htmlFor="company">Company Name :</label>
           <input
@@ -76,7 +91,7 @@ export default function Experience({
           />
           <button type="submit">Submit</button>
         </form>
-      </>
+      </div>
     );
   }
 }

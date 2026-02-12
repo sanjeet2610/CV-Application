@@ -1,0 +1,44 @@
+.app {
+  display: flex;
+  padding: none;
+  min-height: 100vh;
+  background-color: #f2f4f7;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+input,
+textarea {
+  width: 70%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  display: block;
+  margin-top: 16px;
+  padding: 10px 16px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1e4fd6;
+}
+p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
